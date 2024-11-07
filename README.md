@@ -1,0 +1,1 @@
+# demo-platform-service-istio-system
