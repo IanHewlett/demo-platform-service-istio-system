@@ -17,7 +17,7 @@ spec:
       helm:
         releaseName: istiod
         valueFiles:
-          - $values/release/values.yaml
+          - $values/release/istiod/values.yaml
 
     - repoURL: https://github.com/IanHewlett/demo-platform-service-istio-system.git
       ref: values
