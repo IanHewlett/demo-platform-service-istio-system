@@ -1,0 +1,27 @@
+global:
+  istioNamespace: istio-system
+  meshID: ${ROLE}
+  network: ${CLUSTER_NAME}
+
+  proxy:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 16Mi
+
+pilot:
+  autoscaleEnabled: false
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  nodeSelector:
+    nodegroup: "management-nodes"
+
+  tolerations:
+    - key: "dedicated"
+      operator: "Equal"
+      value: "management"
+      effect: "NoSchedule"
