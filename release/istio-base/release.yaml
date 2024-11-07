@@ -16,11 +16,6 @@ spec:
       targetRevision: 1.19.3
       helm:
         releaseName: istio-base
-        valueFiles:
-          - $values/release/values.yaml
-
-    - repoURL: https://github.com/IanHewlett/demo-platform-service-istio-system.git
-      ref: values
 
   destination:
     server: "https://kubernetes.default.svc"
