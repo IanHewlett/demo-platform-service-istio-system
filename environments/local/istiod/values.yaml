@@ -1,2 +1,5 @@
 global:
   meshID: local
+
+pilot:
+  replicaCount: 1
