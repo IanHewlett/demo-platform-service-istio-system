@@ -10,6 +10,7 @@ global:
         memory: 16Mi
 
 pilot:
+  replicaCount: 3
   autoscaleEnabled: false
 
   resources:
