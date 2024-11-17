@@ -1,0 +1,19 @@
+autoscaling:
+  enabled: false
+
+resources:
+  requests:
+    cpu: 10m
+    memory: 128Mi
+
+nodeSelector:
+  nodegroup: management-nodes
+
+tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: management
+    effect: "NoSchedule"
+
+service:
+  type: LoadBalancer
