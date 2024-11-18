@@ -14,8 +14,8 @@ spec:
     - chart: istiod
       repoURL: https://istio-release.storage.googleapis.com/charts
       targetRevision: 1.19.3
+
       helm:
-        releaseName: istiod
         valueFiles:
           - $values/release/istiod/values.yaml
 
