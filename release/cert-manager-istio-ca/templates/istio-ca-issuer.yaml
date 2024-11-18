@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: vault-istio-ca-issuer
+  namespace: istio-system
+spec:
+  vault:
+    server: {{ .Values.vault_addr }}
+    path: "pki-int-{{ .Values.cluster_name }}/sign/istio-ca-{{ .Values.cluster_name }}"
+    namespace: admin
+    auth:
+      kubernetes:
+        mountPath: /v1/auth/{{ .Values.cluster_name }}
+        role: di-admin-kubernetes-role
+        secretRef:
+          name: vault-issuer-token
+          key: token

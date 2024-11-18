@@ -1,0 +1,18 @@
+nodeSelector:
+  nodegroup: management-nodes
+
+tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: management
+    effect: "NoSchedule"
+
+app:
+  logLevel: 5
+
+  server:
+    clusterID: ${CLUSTER_NAME}
+
+  certmanager:
+    issuer:
+      name: vault-istio-ca-issuer
